@@ -7,13 +7,16 @@ const posts = (state = [], action) => {
     return [
       ...state,
       {
-        id: action.id,
-        text: action.text
+        headline: action.headline,
+        content: action.content
       }
     ]
   }
+  else {
+    return state;
+  }
 }
-
+/*
 const comments = (state = [], action) => {
   switch (action.type) {
     case ('ADD_COMMENT'):
@@ -51,8 +54,6 @@ const comments = (state = [], action) => {
       
   }
 }
+*/
 
-export default combineReducers({
-  posts,
-  comments
-});
+export default posts;
