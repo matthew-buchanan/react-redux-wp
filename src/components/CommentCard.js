@@ -1,5 +1,5 @@
 import React from 'react';
-import Vote from './Vote';
+//import Vote from './Vote';
 import PropTypes from 'prop-types';
 
 const CommentCard = (key, commentPoints, commentText) => {
@@ -8,11 +8,9 @@ const CommentCard = (key, commentPoints, commentText) => {
       <div className="comment-points">
         <span>{commentPoints}</span>
       </div>
-      <Vote />
       <div className="comment-text">
         <p>{commentText}</p>
       </div>
-      <button className="comment-reply">Reply</button>
     </div>
   )
 }

@@ -1,25 +1,26 @@
 let nextPost = 0;
 let nextComment = 0;
 let votes = 0;
-export const addPost = text => ({
+export const addPost = (headline, content) => ({
   type: 'ADD_POST',
   id: nextPost++,
-  text
+  headline, 
+  content
 });
 
-export const upVote = (objID) => ({
+export const upVote = (postID) => ({
   type: 'VOTE_UP',
-  id: objID,
+  postID,
   votes: votes++
-  // objID
-})
-export const downVote = (objID) => ({
+});
+
+export const downVote = (postID) => ({
   type: 'VOTE_DOWN',
-  id: objID,
+  postID,
   votes: votes--
 })
 
-// need capability to comment on comment, or on post
+
 export const addComment = (text, postID) => ({
   type: 'ADD_COMMENT',
   id: nextComment++,

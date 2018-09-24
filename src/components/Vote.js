@@ -1,13 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import upVote from '../actions';
+import downVote from '../actions';
 
-const Vote = (props) => {
+const Vote = ({ dispatch }) => {
   return (
-    <div key={props.key} data-obj={props.id}>
-      <button className="upvote">&#8593;</button>
+    <div >
+      <button className="upvote" 
+      onClick={() => {
+        dispatch(upVote(id))
+      }}
+      >&#8593;</button>
       <br />
-      <button className="downvote">&#8595;</button>
+      <button className="downvote"
+      onClick={() => {
+        dispatch(downVote(id))
+      }}>&#8595;</button>
+      <span className="votecount">{voteCount}</span>
     </div>
   )
 }
 
-export default Vote;
+Vote.propTypes = {
+  id: PropTypes.number.isRequired,
+  voteCount: PropTypes.number.isRequired
+}
+
+export default connect()(Vote);
