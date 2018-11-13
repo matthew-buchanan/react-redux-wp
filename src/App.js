@@ -1,20 +1,15 @@
 import React from "react";
 import Jumbotron from './components/Jumbotron';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Detail from './pages/Detail';
-/*
-<Router>
-          <Switch>
-             <Route exact path="/" component={Home} />
-             <Route exact path="/:postID" component={Detail} />
-          </Switch>
-        </Router>
-*/
+import PostAdd from './components/PostAdd';
+import PostRedux from "./containers/PostRedux";
+
 const App = () => {
+  return (
   <div>
     <Jumbotron />
-    <Home /> 
+    <PostAdd />
+    <PostRedux />
   </div> 
+  )
 };
 export default App;

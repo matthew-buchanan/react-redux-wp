@@ -3,22 +3,22 @@ import { connect } from 'react-redux';
 import { addPost } from '../actions';
 
 const PostAdd = ({ dispatch }) => {
-  let headline, content;
+  let head, con;
   return (
     <form
     onSubmit={e => {
-      e.preventDefault()
-      if (!headline.value.trim() || !content.value.trim()) {
-        return
-      }
-      dispatch(addPost(headline.value, content.value))
-        headline.value = '';
-        content.value = '';
+      e.preventDefault();
+      dispatch(addPost(head.value, con.value));
+      head.value = '';
+      con.value = '';
     }}>
-      <label for="headline">Headline:</label>
-      <input type="text" name="headline" ref={node => headline = node} />
-      <label for="content" ref={this.content}>Post:</label>
-      <textarea rows="4" cols="100" type="text" name="content" ref={node => content = node} />
+      <label htmlFor="headline">Headline:</label>
+      <input type="text" name="headline" ref={node => (head=node)} />
+      <br />
+      <label htmlFor="content">Post:</label>
+      <br />
+      <textarea rows="4" cols="50" type="text" name="content" ref={node => (con=node)} />
+      <br />
       <button type="submit">Submit</button>
     </form>
   )

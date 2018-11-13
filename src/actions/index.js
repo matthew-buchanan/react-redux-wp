@@ -1,40 +1,19 @@
-let nextPost = 0;
-let nextComment = 0;
-let votes = 0;
+export const ADD_POST = 'ADD_POST';
+export const UP_VOTE = 'UP_VOTE';
+export const DOWN_VOTE = 'DOWN_VOTE';
+
 export const addPost = (headline, content) => ({
-  type: 'ADD_POST',
-  id: nextPost++,
+  type: ADD_POST,
   headline, 
   content
 });
 
-export const upVote = (postID) => ({
-  type: 'VOTE_UP',
-  postID,
-  votes: votes++
+export const upVote = (id) => ({
+  type: UP_VOTE,
+  id
 });
 
-export const downVote = (postID) => ({
-  type: 'VOTE_DOWN',
-  postID,
-  votes: votes--
+export const downVote = (id) => ({
+  type: DOWN_VOTE,
+  id
 })
-
-
-export const addComment = (text, postID) => ({
-  type: 'ADD_COMMENT',
-  id: nextComment++,
-  parentPost: postID,
-  text
-});
-
-export const deleteComment = id => ({
-  type: 'DELETE_COMMENT',
-  id: id
-});
-
-export const editComment = (id, text) => ({
-  type: 'EDIT_COMMENT',
-  id: id,
-  text
-});
