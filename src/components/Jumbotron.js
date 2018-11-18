@@ -5,7 +5,7 @@ const Jumbotron = () => {
     <div className="jumbotron">
       <h1>REACT REDUX WEBPACK</h1>
       <hr />
-      <p>For this demo, add a post, then upvote or downvote. Posts are sorted by upvotes.</p>
+      <p>It may not look like much, but wait until you see the source code.</p>
     </div>
   )
 }
